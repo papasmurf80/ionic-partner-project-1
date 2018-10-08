@@ -1,11 +1,29 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Register
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Email</ion-label>
+      <ion-input type="email" placeholder="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label color="primary" stacked>Password</ion-label>
+      <ion-input type="password" placeholder="password"></ion-input>
+    </ion-item>     
+
+    <ion-item>
+      <ion-label color="primary" stacked>Date of Birth</ion-label>
+      <ion-input type="date" placeholder="username"></ion-input>
+    </ion-item> 
+  </ion-list>
+  <button ion-button color="secondary" (click)="goHome()" >Go Home</button>
 
 </ion-content>
