@@ -1,17 +1,30 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>To Do List</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <section class="todoapp">
+    <header class="header">
+      <h1>Todos</h1>
+      <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+    </header>
+    <section class="main" *ngIf="todos.length > 0">
+      <ul class="todo-list">
+        <li *ngFor="let todo of todos" [class.completed]="todo.complete">
+          <div class="view">
+            <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+            <label>{{todo.title}}</label>
+            <button class="destroy" (click)="removeTodo(todo)"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <footer class="footer" *ngIf="todos.length > 0">
+      <span class="todo-count">
+        <strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+    </footer>
+  </section>
 </ion-content>
+
