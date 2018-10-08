@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { App } from 'ionic-angular';
+
 import { AboutPage } from '../about/about';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-login',
@@ -9,14 +12,19 @@ import { AboutPage } from '../about/about';
 export class LoginPage {
 user: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private app: App) {
 
   }
   
   login(user) {
     console.log("login");
-      AboutPage.goHome();  
-    // return null
+  this.goHome();
   }
+
+  goHome(){
+    this.app.getRootNav().setRoot(HomePage, {}, {animate: true, direction: 'forward'});
+  }
+
+  
 
 }
