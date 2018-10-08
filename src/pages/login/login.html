@@ -10,9 +10,9 @@
     <ion-list>
       <ion-list-header>Let's get started!</ion-list-header>
 
-      <ion-item>
-        <ion-label color="primary" stacked>Username</ion-label>
-        <ion-input type="email" placeholder="enter username"></ion-input>
+      <ion-item class="loginEmail">
+        <ion-label color="primary" stacked>email</ion-label>
+        <ion-input type="email" placeholder="enter email"></ion-input>
       </ion-item>
     
       <ion-item>
@@ -20,6 +20,6 @@
         <ion-input type="password" placeholder="enter password"></ion-input>
       </ion-item>      
     </ion-list>
-    <button class="loginBtn" ion-button color="secondary">Login</button>
+    <button class="loginBtn" ion-button color="secondary" (click)="login()">Login</button>
 
   </ion-content>

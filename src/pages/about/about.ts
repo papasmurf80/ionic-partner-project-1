@@ -8,6 +8,7 @@ import { App } from 'ionic-angular';
   templateUrl: 'about.html'
 })
 export class AboutPage {
+  static goHome: any;
 
   constructor(public navCtrl: NavController, private app: App) {
 
